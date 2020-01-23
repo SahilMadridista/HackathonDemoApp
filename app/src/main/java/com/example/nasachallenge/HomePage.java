@@ -8,8 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -58,6 +60,23 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         //Switch Case activity here to change activities fron navigation drawer
+
+        switch (menuItem.getItemId()){
+
+            case R.id.itemone:
+                Toast.makeText(HomePage.this,"Clicked",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.itemtwo:
+                Toast.makeText(HomePage.this,"2nd Clicked",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.itemthree:
+                startActivity(new Intent(HomePage.this,MainActivity.class));
+                finish();
+
+
+        }
 
 
 
